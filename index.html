@@ -1,25 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CS 499 ePortfolio - John Chomen</title>
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #5f6b7a;
+      --accent: #1f4e79;
+      --accent-dark: #163a5a;
+      --border: #d8e0ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: white;
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      margin: 12px auto 0;
+      max-width: 760px;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 0 24px;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .artifact-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .artifact-card h3 {
+      margin-top: 0;
+      color: var(--accent-dark);
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e8f1fa;
+      color: var(--accent-dark);
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 650px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>CS 499 ePortfolio</h1>
-  <h2>John Chomen</h2>
+  <header>
+    <h1>CS 499 ePortfolio</h1>
+    <p>
+      John Chomen | Computer Science Capstone Portfolio
+    </p>
+    <p>
+      This portfolio presents my capstone work, including artifact enhancements in software engineering and design,
+      algorithms and data structures, and databases.
+    </p>
+  </header>
 
-  <p>
-    This ePortfolio will showcase my capstone work for CS 499, including artifact enhancements
-    in software engineering and design, algorithms and data structures, and databases.
-  </p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#code-review">Code Review</a>
+    <a href="#enhancements">Enhancements</a>
+    <a href="#self-assessment">Self-Assessment</a>
+  </nav>
 
-  <h2>Portfolio Sections</h2>
-  <ul>
-    <li>Code Review</li>
-    <li>Software Engineering and Design Enhancement</li>
-    <li>Algorithms and Data Structures Enhancement</li>
-    <li>Database Enhancement</li>
-    <li>Professional Self-Assessment</li>
-  </ul>
+  <main>
+    <section id="about" class="card">
+      <h2>Professional Overview</h2>
+      <p>
+        This ePortfolio documents my growth throughout the Computer Science program and demonstrates my ability to
+        design, develop, evaluate, and secure computing solutions. The portfolio will be updated throughout CS 499 as
+        original artifacts are enhanced and supported with written narratives.
+      </p>
+      <p>
+        My planned enhancements focus on practical software development, maintainable architecture, efficient algorithmic
+        design, database reliability, and security-conscious implementation.
+      </p>
+    </section>
+
+    <section id="code-review" class="card">
+      <h2>Code Review</h2>
+      <p>
+        The code review will provide a walkthrough of my selected artifact or artifacts before enhancement. It will
+        identify existing functionality, areas for improvement, planned modifications, design trade-offs, testing needs,
+        and security considerations.
+      </p>
+      <span class="status">Planned for Module Two</span>
+    </section>
+
+    <section id="enhancements">
+      <h2>Artifact Enhancements</h2>
+
+      <div class="grid">
+        <div class="artifact-card">
+          <h3>Software Engineering and Design</h3>
+          <p>
+            This enhancement will focus on improving application structure, usability, maintainability, and professional
+            software design practices.
+          </p>
+          <span class="status">Enhancement One</span>
+        </div>
+
+        <div class="artifact-card">
+          <h3>Algorithms and Data Structures</h3>
+          <p>
+            This enhancement will focus on improving logic, data handling, performance, and the use of appropriate
+            algorithmic principles.
+          </p>
+          <span class="status">Enhancement Two</span>
+        </div>
+
+        <div class="artifact-card">
+          <h3>Databases</h3>
+          <p>
+            This enhancement will focus on improving persistence, data integrity, querying, schema design, and secure
+            handling of application data.
+          </p>
+          <span class="status">Enhancement Three</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="self-assessment" class="card">
+      <h2>Professional Self-Assessment</h2>
+      <p>
+        The final self-assessment will summarize how my coursework, artifact enhancements, and ePortfolio demonstrate
+        my readiness for professional work in computer science, with emphasis on software development, databases,
+        algorithms, communication, collaboration, and security.
+      </p>
+      <span class="status">Planned for Final Submission</span>
+    </section>
+  </main>
+
+  <footer>
+    <p>CS 499 Computer Science Capstone | John Chomen</p>
+  </footer>
 </body>
 </html>
