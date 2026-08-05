@@ -35,7 +35,7 @@
       line-height: 1.65;
     }
     a { color: inherit; }
-    img, video { max-width: 100%; }
+    img, video, iframe { max-width: 100%; }
     .skip-link {
       position: fixed; top: -80px; left: 1rem; z-index: 1000;
       background: white; color: #06101d; padding: .75rem 1rem; border-radius: .5rem;
@@ -120,7 +120,7 @@
     .fact strong { display: block; color: var(--accent); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .25rem; }
 
     .video-shell { padding: .65rem; background: #030810; border-radius: 1.25rem; border: 1px solid var(--border); box-shadow: var(--shadow); }
-    video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: .9rem; background: #000; }
+    video, .video-shell iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: .9rem; background: #000; }
     .video-note { margin: 1rem .35rem .3rem; color: var(--muted); font-size: .92rem; }
     code { color: #d7e7ff; background: rgba(255,255,255,.07); border: 1px solid var(--border); padding: .1rem .35rem; border-radius: .35rem; }
 
@@ -257,14 +257,17 @@
         </p>
       </div>
       <div class="video-shell">
-        <video controls preload="metadata" poster="assets/code-review-poster.jpg">
-          <source src="assets/john-chomen-cs499-code-review.mp4" type="video/mp4">
-          Your browser does not support embedded video. Download the
-          <a href="assets/john-chomen-cs499-code-review.mp4">CS 499 code review video</a> instead.
-        </video>
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/oNLe6olYMU0"
+          title="CS 499 Informal Code Review - John Chomen"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
         <p class="video-note">
-          Upload your video as <code>assets/john-chomen-cs499-code-review.mp4</code>. The player and fallback download link are already wired to that filename.
-          The poster image is optional and may be added as <code>assets/code-review-poster.jpg</code>.
+          This 25-minute informal code review is hosted on YouTube and embedded directly in the ePortfolio.
+          <a href="https://youtu.be/oNLe6olYMU0" target="_blank" rel="noopener noreferrer">Open the video on YouTube</a>.
         </p>
       </div>
     </section>
