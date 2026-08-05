@@ -1,8 +1,0 @@
-Place the code review video in this folder with this exact filename:
-
-john-chomen-cs499-code-review.mp4
-
-Optional thumbnail filename:
-code-review-poster.jpg
-
-The homepage is already wired to both filenames.
