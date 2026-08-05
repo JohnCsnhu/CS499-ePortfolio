@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment android:id="@+id/loginFragment"
+        android:name="com.example.weight_tracking_app.ui.LoginFragment" android:label="Login">
+        <action android:id="@+id/action_loginFragment_to_registerFragment" app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/registerFragment"
+        android:name="com.example.weight_tracking_app.ui.RegisterFragment" android:label="Create account" />
+
+    <fragment android:id="@+id/dashboardFragment"
+        android:name="com.example.weight_tracking_app.ui.DashboardFragment" android:label="Dashboard">
+        <action android:id="@+id/action_dashboardFragment_to_profileFragment" app:destination="@id/profileFragment" />
+        <action android:id="@+id/action_dashboardFragment_to_entryEditorFragment" app:destination="@id/entryEditorFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/historyFragment"
+        android:name="com.example.weight_tracking_app.ui.HistoryFragment" android:label="History">
+        <action android:id="@+id/action_historyFragment_to_entryEditorFragment" app:destination="@id/entryEditorFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/insightsFragment"
+        android:name="com.example.weight_tracking_app.ui.InsightsFragment" android:label="Insights" />
+
+    <fragment android:id="@+id/profileFragment"
+        android:name="com.example.weight_tracking_app.ui.ProfileFragment" android:label="Profile" />
+
+    <fragment android:id="@+id/settingsFragment"
+        android:name="com.example.weight_tracking_app.ui.SettingsFragment" android:label="Settings" />
+
+    <fragment android:id="@+id/entryEditorFragment"
+        android:name="com.example.weight_tracking_app.ui.EntryEditorFragment" android:label="Entry editor">
+        <argument android:name="entryId" android:defaultValue="0" app:argType="integer" />
+    </fragment>
+
+    <!-- Global logout: clear the back stack and return to login. -->
+    <action android:id="@+id/action_global_logout"
+        app:destination="@id/loginFragment"
+        app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
+</navigation>

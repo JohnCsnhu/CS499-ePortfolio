@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Profile" android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" android:textStyle="bold" />
+<EditText android:id="@+id/editName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="Name" android:inputType="textPersonName" />
+<EditText android:id="@+id/editAge" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="Age" android:inputType="number" />
+<EditText android:id="@+id/editHeightCm" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="Height (cm)" android:inputType="numberDecimal" />
+<Spinner android:id="@+id/spinnerGender" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" />
+<Spinner android:id="@+id/spinnerUnit" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" />
+<EditText android:id="@+id/editStartingWeight" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="Starting weight" android:inputType="numberDecimal" />
+<EditText android:id="@+id/editGoalWeight" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="Goal weight" android:inputType="numberDecimal" />
+<EditText android:id="@+id/editPhone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="Phone for goal text (optional)" android:inputType="phone" />
+<com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switchReminders" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="Enable daily reminders" />
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
+<EditText android:id="@+id/editReminderHour" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="Hour (0-23)" android:inputType="number" />
+<EditText android:id="@+id/editReminderMinute" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:hint="Minute" android:inputType="number" />
+</LinearLayout>
+<TextView android:id="@+id/textError" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:textColor="@android:color/holo_red_dark" />
+<com.google.android.material.button.MaterialButton android:id="@+id/buttonSaveProfile" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="Save profile" />
+<TextView android:id="@+id/textSmsStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="SMS alerts: checking…" android:textStyle="bold" />
+<com.google.android.material.button.MaterialButton android:id="@+id/buttonSendTest" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Send test message" />
+<View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="18dp" android:background="?android:attr/listDivider" />
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="Security" android:textStyle="bold" />
+<EditText android:id="@+id/editCurrentPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:hint="Current password" android:inputType="textPassword" />
+<EditText android:id="@+id/editNewPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:hint="New password (min 6)" android:inputType="textPassword" />
+<com.google.android.material.button.MaterialButton android:id="@+id/buttonChangePassword" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Change password" />
+<com.google.android.material.button.MaterialButton android:id="@+id/buttonDeleteAccount" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="Delete account" app:backgroundTint="@android:color/holo_red_dark" />
+<com.google.android.material.button.MaterialButton android:id="@+id/buttonLogout" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Log out" />
+</LinearLayout></ScrollView>

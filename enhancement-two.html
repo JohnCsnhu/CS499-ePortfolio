@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CS 499 Enhancement Two: Algorithms and Data Structures for John Chomen's Weight Tracking App.">
+  <meta name="author" content="John Chomen">
+  <title>Enhancement Two | John Chomen</title>
+  <style>
+    :root { --bg:#07111f; --panel:#10233b; --text:#eef5ff; --muted:#a9b8cc; --accent:#66d9ff; --accent2:#8d7cff; --border:rgba(170,205,255,.18); --max:1080px; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 12% 0%,rgba(102,217,255,.15),transparent 30%),linear-gradient(180deg,#07111f,#09172a 50%,#06101d);line-height:1.7} a{color:inherit}
+    nav{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)} .nav{width:min(var(--max),calc(100% - 2rem));margin:auto;min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{text-decoration:none;font-weight:900}.links{display:flex;gap:.5rem;flex-wrap:wrap}.links a{text-decoration:none;color:var(--muted);font-weight:750;padding:.45rem .65rem;border-radius:.55rem}.links a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+    header,main,footer{width:min(var(--max),calc(100% - 2rem));margin:auto} header{padding:5rem 0 3rem}.eyebrow{color:var(--accent);font-weight:900;letter-spacing:.15em;text-transform:uppercase;font-size:.78rem}h1{font-size:clamp(2.7rem,7vw,5.4rem);line-height:1.02;letter-spacing:-.05em;margin:.8rem 0 1.25rem}header p{max-width:800px;color:var(--muted);font-size:1.15rem}
+    section{padding:2.3rem 0}h2{font-size:clamp(1.65rem,3vw,2.5rem);letter-spacing:-.025em;margin:0 0 1rem}h3{margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.card{background:rgba(16,35,59,.84);border:1px solid var(--border);border-radius:1.1rem;padding:1.35rem}.card p{color:var(--muted)}code{background:rgba(255,255,255,.07);border:1px solid var(--border);padding:.12rem .35rem;border-radius:.35rem}.buttons{display:flex;flex-wrap:wrap;gap:.65rem}.button{display:inline-flex;padding:.72rem 1rem;border-radius:.72rem;text-decoration:none;font-weight:850;border:1px solid var(--border);background:rgba(255,255,255,.04)}.button.primary{background:linear-gradient(135deg,var(--accent),#aab2ff);color:#06101d;border-color:transparent}.feedback{border-left:4px solid var(--accent);padding-left:1.25rem;color:var(--muted)}footer{padding:3rem 0;color:var(--muted);border-top:1px solid var(--border);margin-top:3rem}@media(max-width:760px){.grid{grid-template-columns:1fr}.nav{align-items:flex-start;padding:.8rem 0}.links{justify-content:flex-end}}
+  </style>
+</head>
+<body>
+<nav aria-label="Primary navigation"><div class="nav"><a class="brand" href="index.html">John Chomen.</a><div class="links"><a href="index.html">Home</a><a href="#overview">Overview</a><a href="#downloads">Artifacts</a><a href="#reflection">Reflection</a></div></div></nav>
+<header><p class="eyebrow">CS 499 · Enhancement Two</p><h1>Algorithms and Data Structures</h1><p>Weight Tracking App enhancements using chronological data processing, single-pass analytics, least-squares linear regression, efficient list differencing, and searchable history.</p></header>
+<main>
+<section id="overview"><h2>Artifact overview</h2><p>The artifact is an Android weight-tracking application created earlier in the Computer Science program. I selected it because the original application stored useful records but did not fully transform those records into reliable, decision-supporting information. The enhancement improves computational correctness, analytical value, and runtime behavior while preserving a practical user-facing purpose.</p></section>
+<section><h2>Enhancement summary</h2><div class="grid">
+<article class="card"><h3>Chronological correctness</h3><p>Records are interpreted by normalized date and creation time rather than row identifier, preventing back-dated entries from being misclassified as the newest measurement.</p></article>
+<article class="card"><h3>Single-pass analytics</h3><p>Moving averages, minimum values, and maximum values are calculated with linear traversal, keeping the implementation readable and efficient for the application’s expected dataset size.</p></article>
+<article class="card"><h3>Regression trend analysis</h3><p>Least-squares linear regression models weight against elapsed days, correctly accounting for irregular intervals between measurements and reporting a weekly rate of change.</p></article>
+<article class="card"><h3>Efficient presentation structures</h3><p>History filtering creates a derived in-memory collection, while <code>DiffUtil</code> computes minimal RecyclerView changes instead of rebinding the complete list.</p></article>
+</div></section>
+<section><h2>Algorithmic design and trade-offs</h2><div class="card"><p>The regression slope is computed as <code>(nΣxy − ΣxΣy) / (nΣx² − (Σx)²)</code>. The implementation checks preconditions, protects against a near-zero denominator, and uses floating-point tolerance when classifying a slope as stable. A configurable moving-average window allows a deliberate trade-off between smoothing and responsiveness. In-memory history filtering is appropriate for the current dataset size, while database-side search would be a logical future optimization if the record count grows substantially.</p></div></section>
+<section id="downloads"><h2>Original and enhanced artifacts</h2><p>These files provide the evidence required to compare the application before and after the algorithms and data structures enhancement.</p><div class="buttons">
+<a class="button" href="artifacts/enhancement-two/Original_WeightTrackingApp.zip" download>Download original artifact</a>
+<a class="button primary" href="artifacts/enhancement-two/Enhanced_WeightTrackingApp.zip" download>Download enhanced artifact</a>
+<a class="button" href="artifacts/enhancement-two/CS499_Milestone_Three_Algorithms_Data_Structures_Narrative.docx" download>Download narrative</a>
+<a class="button" href="artifacts/enhancement-two/Instructor_Feedback.txt">Read instructor feedback</a>
+</div></section>
+<section><h2>Instructor feedback incorporated</h2><div class="feedback"><p>Professor Lusby characterized the narrative as exceptionally thorough and clear and specifically validated the use of least-squares regression for irregular time intervals, single-pass moving averages, complexity and trade-off analysis, Room structures, indexed queries, foreign-key behavior, password hashing, edge-case handling, data preconditions, and unit testing. Because the feedback identified no corrective deficiencies, incorporation consisted of preserving the validated implementation and presenting the evidence more clearly in the ePortfolio.</p></div></section>
+<section id="reflection"><h2>Reflection</h2><p>This enhancement reinforced that an algorithm is not correct merely because it produces a result. Correctness depends on ordering assumptions, valid preconditions, treatment of malformed or insufficient data, numerical stability, and tests that exercise boundary conditions. I also learned to frame optimization decisions in context: an O(n) traversal is appropriate for a modest local dataset, while more complex indexing or database-side computation would introduce maintenance cost without a corresponding present benefit.</p><p>The work most directly supports the course outcomes related to professional communication, algorithmic problem solving, well-founded computing practices, and security-conscious design. Collaboration and stakeholder communication are demonstrated more fully through the code-review video, instructor feedback process, and final professional self-assessment.</p></section>
+</main>
+<footer><a href="index.html">← Return to the ePortfolio home page</a></footer>
+</body>
+</html>
